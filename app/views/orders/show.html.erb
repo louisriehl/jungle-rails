@@ -5,16 +5,28 @@
   </header>
 
   <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
-    <h3>Here's your order summary:</h3>
+    <h3>Thank you for your order!</h3>
+    <h3>Sent to: <%= @order.email %></h3>
+    <h4>Here's your order summary:</h4>
+    <table>
 
-    <ul>
-      <% @order.line_items.each do |item| %>
-      <li><%= item.quantity %> - <%= item.product.name %></li>
+      <thead class="table table-bordered">
+        <th colspan="2">Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </thead>
+      <tbody>
+        <% @order.line_items.each do |item| %>
+        <tr>
+          <td><%= image_tag item.product.image.tiny%></td>
+          <td><%= item.product.name %></td>
+          <td><%= item.quantity %></td>
+          <td><%= item.total_price%></td>
+        </tr>
+        <% end %>
+      </tbody>
 
-      <% end %>
-
-    </ul>
+    </table>
   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>

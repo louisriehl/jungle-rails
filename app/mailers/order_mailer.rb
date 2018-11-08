@@ -2,8 +2,8 @@ class OrderMailer < ApplicationMailer
 
   default from: "no-reply@jungle.com"
 
-  def order_receipt
-    @user = current_user
-    mail(to: @user.email, subject:'This is a test email...')
+  def order_receipt(order)
+    @order = order
+    mail(to: @order.email, subject:'This is a test email...')
   end
 end

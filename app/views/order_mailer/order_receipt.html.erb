@@ -4,14 +4,10 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Thanks for your order, <%= @user.name %></h1>
+    <h1>Thanks for your order!</h1>
     <p>
-      Your order has been confirmed.<br>
+      Your order has been confirmed!<br>
+      Your card has been charged <%= @order.total_cents %>.
     </p>
-    <ul>
-      <% enhanced_cart.each do |item| %>
-      <li><%= item[:quantity] %> - <%= item[:product, :name] %> - <%= item[:product, :price] %></li>
-      <% end %>
-    </ul>
   </body>
 </html>

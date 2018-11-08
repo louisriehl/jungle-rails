@@ -4,6 +4,12 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if current_user %>
+    <h3>Order For: <%= current_user.email %></h3>
+  <% else %>
+    <h3>Are you a returning customer? <%= link_to 'Sign up for an account!', '/signup' %></h3>
+  <% end %>
+
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>

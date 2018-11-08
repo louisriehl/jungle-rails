@@ -9,5 +9,11 @@
       Your order has been confirmed!<br>
       Your card has been charged <%= @order.total_cents %>.
     </p>
+    <h4>You can find your order summary below:</h4>
+    <ul>
+      <% @order.line_items.each do |item| %>
+      <li><%= item.quantity %> - <% item.product.name %> - <%= item.total_price %></li>
+      <% end %>
+    </ul>
   </body>
 </html>

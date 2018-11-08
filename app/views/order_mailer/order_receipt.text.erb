@@ -3,3 +3,10 @@ Thanks for your order!
 ===============================================
 
 Your order has been confirmed.
+Your card has been charged $<%= @order.total_cents / 100.0%>.
+
+You can find your order summary below:
+
+<% @order.line_items.each do |item| %>
+- <%= item.quantity %> - <%= item.product.name %> - $<%= item.total_price %>
+<% end %>

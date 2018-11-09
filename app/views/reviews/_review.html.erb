@@ -1,5 +1,10 @@
 <tr>
   <td class="text-center"><%= review.rating %></td>
   <td><%= review.description %></td>
-  <td><%= current_user && review.user_id == current_user.id ? "You wrote this review!" : "You didn't write this review!" %></td>
+  <td>
+    <% if current_user && review.user_id == current_user.id %>
+    <%= link_to 'Delete Review', [review.product, review],
+               method: :delete %>
+    <% end %>
+  </td>
 </tr>

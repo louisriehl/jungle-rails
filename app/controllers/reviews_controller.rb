@@ -13,6 +13,10 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    raise 'Deleting comment!'
+  end
+
   private
     def review_params
       params.require(:review).permit(

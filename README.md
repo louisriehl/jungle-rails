@@ -13,10 +13,10 @@ A mini e-commerce application built with Rails 4.2, modified and improved on wit
 
 ## Screenshots
 
-[View Product Index](https://github.com/louisriehl/jungle-rails/blob/master/app/assets/images/products_index.png?raw=true)
-[View Individual Products](https://github.com/louisriehl/jungle-rails/blob/master/app/assets/images/product_view.png?raw=true)
-[Leave Reviews](https://github.com/louisriehl/jungle-rails/blob/master/app/assets/images/reviews.png?raw=true)
-[Admin Control of Items](https://github.com/louisriehl/jungle-rails/blob/master/app/assets/images/admin_products.png?raw=true)
+![View Product Index](https://github.com/louisriehl/jungle-rails/blob/master/app/assets/images/products_index.png?raw=true)
+![View Individual Products](https://github.com/louisriehl/jungle-rails/blob/master/app/assets/images/product_view.png?raw=true)
+![Leave Reviews](https://github.com/louisriehl/jungle-rails/blob/master/app/assets/images/reviews.png?raw=true)
+![Admin Control of Items](https://github.com/louisriehl/jungle-rails/blob/master/app/assets/images/admin_products.png?raw=true)
 
 ## Setup
 

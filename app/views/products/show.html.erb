@@ -51,6 +51,21 @@
       <h3>No reviews yet! Be the first!</h3>
     <% end %>
 
+    <h4>Add a review for this product:</h4>
+      <%= form_for([@product, @product.reviews.build]) do |f| %>
+        <p>
+          <%= f.label :rating %><br>
+          <%= f.text_field :rating %>
+        </p>
+        <p>
+          <%= f.label :description %><br>
+          <%= f.text_area :description %>
+        </p>
+        <p>
+          <%= f.submit %>
+        </p>
+      <% end %>
+
   </article>
 
 </section>

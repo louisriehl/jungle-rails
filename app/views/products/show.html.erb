@@ -36,9 +36,7 @@
       <h3>Reviews:</h3>
       <div class="col-sm-4">
         <dl class="dl-horizontal">
-        <% @product.reviews.each do |review| %>
-          <%= render 'review', review: review %>
-        <% end %>
+          <%= render @product.reviews %>
         </dl>
       </div>
     <% else %>

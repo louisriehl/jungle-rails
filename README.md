@@ -1,7 +1,17 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2, modified and improved on with extra features and bug fixes!
 
+## Features
+
+ * User authentication
+ * Admin control of products and categories
+ * User-created reviews
+ * Checkout system and email receipt generation
+
+ Note: While email receipts are created, they aren't being sent. Hook up your preferred SMTP protocol!
+
+## Screenshots
 
 ## Setup
 
@@ -10,7 +20,7 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 3. Create `config/database.yml` by copying `config/database.example.yml`
 4. Create `config/secrets.yml` by copying `config/secrets.example.yml`
 5. Run `bin/rake db:reset` to create, load and seed db
-6. Create .env file based on .env.example
+6. Create .env file based on .env.example, adding in an admin username and password
 7. Sign up for a Stripe account
 8. Put Stripe (test) keys into appropriate .env vars
 9. Run `bin/rails s -b 0.0.0.0` to start the server

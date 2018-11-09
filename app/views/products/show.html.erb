@@ -37,10 +37,7 @@
       <div class="col-sm-4">
         <dl class="dl-horizontal">
         <% @product.reviews.each do |review| %>
-          <dt>Rating:</dt>
-          <dd><%= review.rating %></dd>
-          <dt>Review:</dt>
-          <dd><%= review.description %></dd>
+          <%= render 'review', review: review %>
         <% end %>
         </dl>
       </div>

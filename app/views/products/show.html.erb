@@ -26,9 +26,11 @@
       </div>
     </div>
 
-    <%= button_to add_item_cart_path(product_id: @product.id), class: 'btn btn-primary' , method: :post do %>
-      <%= fa_icon "shopping-cart", text: 'Add' %>
-    <% end %>
+    <div style="margin: 1em;">
+      <%= button_to add_item_cart_path(product_id: @product.id), class: 'btn btn-primary btn-block' , :disabled => @product.quantity == 0, method: :post do %>
+        <%= fa_icon "shopping-cart", text: 'Add' %>
+      <% end %>
+    </div>
 
   </article>
 

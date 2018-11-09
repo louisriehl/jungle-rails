@@ -27,9 +27,11 @@
     </div>
 
     <div>
+      <ul>
       <% @product.reviews.each do |review| %>
-        <p> Test </p>
+        <li> <%= review.description %> </li>
       <% end %>
+      </ul>
     </div>
 
     <div style="margin: 1em;">

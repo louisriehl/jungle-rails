@@ -4,6 +4,6 @@ class OrderMailer < ApplicationMailer
 
   def order_receipt(order)
     @order = order
-    mail(to: @order.email, subject:'This is a test email...')
+    mail(to: @order.email, subject:"Order # #{@order.id}")
   end
 end

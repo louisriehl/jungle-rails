@@ -14,7 +14,11 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    raise 'Deleting comment!'
+    @product = Product.find_by(id: params[:product_id])
+    @review = @product.reviews.find(params[:id])
+
+    @review.destroy
+    redirect_to "/products/#{@product.id}#reviews"
   end
 
   private

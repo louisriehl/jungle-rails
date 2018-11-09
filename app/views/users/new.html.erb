@@ -1,11 +1,26 @@
 <h1>Signup Page</h1>
 
-<%= form_for :user, url: '/users' do |form| %>
+<div class='container jumbotron'>
+  <%= form_for :user, url: '/users' do |form| %>
 
-  Name: <%= form.text_field :name %>
-  Email: <%= form.text_field :email %>
-  Password: <%= form.password_field :password %>
-  Password Confirmation: <%= form.password_field :password_confirmation %>
-  <%= form.submit 'Submit' %>
+  <div class='form-group'>
+    <%= label_tag :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+  <div class='form-group'>
+    <%= label_tag :email %>
+    <%= form.text_field :email, class: "form-control" %>
+  </div>
+  <div class='form-group'>
+    <%= label_tag :password %>
+    <%= form.password_field :password, class: "form-control" %>
+  </div>
+  <div class='form-group'>
+    <%= label_tag :password_confirmation %>
+    <%= form.password_field :password_confirmation, class: "form-control" %>
+  </div>
 
-<% end %>
+    <%= form.submit 'Submit', class: 'btn btn-success btn-block' %>
+
+  <% end %>
+</div>

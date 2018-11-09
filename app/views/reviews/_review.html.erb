@@ -1,10 +1,12 @@
 <tr>
   <td class="text-center"><%= review.rating %></td>
   <td><%= review.description %></td>
-  <td>
-    <% if current_user && review.user_id == current_user.id %>
-    <%= link_to 'Delete Review', [review.product, review],
-               method: :delete %>
-    <% end %>
-  </td>
+  <% if current_user && review.user_id == current_user.id %>
+    <td>
+      <%= link_to 'Delete Review', [review.product, review],
+                 method: :delete,
+                 role: "button",
+                 class: "btn btn-danger"  %>
+    </td>
+  <% end %>
 </tr>

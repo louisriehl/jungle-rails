@@ -31,25 +31,26 @@
         <%= fa_icon "shopping-cart", text: 'Add' %>
       <% end %>
     </div>
-
-    <% if @product.reviews.length != 0 %>
-      <h3>User Reviews:</h3>
-      <div class="panel panel-default items">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Rating</th>
-              <th>Review</th>
-            </tr>
-          </thead>
-          <tbody>
-            <%= render @product.reviews %>
-          </tbody>
-        </table>
-      </div>
-    <% else %>
-      <h3>No reviews yet! Be the first!</h3>
-    <% end %>
+      <div id="reviews">
+      <% if @product.reviews.length != 0 %>
+        <h3>User Reviews:</h3>
+        <div class="panel panel-default items">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Rating</th>
+                <th>Review</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= render @product.reviews %>
+            </tbody>
+          </table>
+        </div>
+      <% else %>
+        <h3>No reviews yet! Be the first!</h3>
+      <% end %>
+    </div>
 
     <h4>Add a review for this product:</h4>
       <%= form_for([@product, @product.reviews.build]) do |f| %>

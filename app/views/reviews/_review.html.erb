@@ -1,4 +1,5 @@
 <tr>
+  <td><%= review.user.name %></td>
   <td class="text-center"><%= review.rating %></td>
   <td><%= review.description %></td>
   <% if current_user && review.user_id == current_user.id %>

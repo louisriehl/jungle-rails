@@ -33,6 +33,7 @@
     </div>
 
     <% if @product.reviews.length != 0 %>
+      <h3>Reviews:</h3>
       <div class="col-sm-4">
         <dl class="dl-horizontal">
         <% @product.reviews.each do |review| %>

@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
 
-  monetize :price_cents, numericality: true
+  monetize :price_cents, numericality: true, allow_nil: false
   mount_uploader :image, ProductImageUploader
 
   has_many :reviews

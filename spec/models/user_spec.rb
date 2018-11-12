@@ -9,7 +9,7 @@ RSpec.describe User, type: :model do
     email: 'myemail@email.com'
     )}
 
-  context 'Validations' do
+  describe 'Validations' do
 
     it 'should be valid when fields are valid' do
       expect(subject).to be_valid
@@ -78,6 +78,10 @@ RSpec.describe User, type: :model do
       end
 
     end
+
+  end
+
+  describe 'authenticate_with_credentials' do
 
   end
 

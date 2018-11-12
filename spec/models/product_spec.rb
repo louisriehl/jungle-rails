@@ -22,13 +22,9 @@ RSpec.describe Product, type: :model do
     end
 
     it 'should be invalid without a price' do
+      subject.price_cents = nil
       subject.price = nil
       expect(subject).to_not be_valid
-    end
-
-    it 'should have a nil price' do
-      subject.price = nil
-      expect(subject.price).to be_nil
     end
 
     it 'should be invalid without a quantity' do

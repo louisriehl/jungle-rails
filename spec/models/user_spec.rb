@@ -48,7 +48,22 @@ RSpec.describe User, type: :model do
 
     context 'Email' do
 
-      it 'should be invalid when there is no email'
+      it 'should be invalid when there is no email' do
+        subject.email = nil
+        expect(subject).to_not be_valid
+      end
+
+      it 'should be invalid if another user has the same email' do
+        @subject = User.create( name: 'Fred', password: '12345', password_confirmation: '12345', email: 'newemail@email.com')
+        @subject2 = User.create( name: 'Terry', password: '67890', password_confirmation: '67890', email: 'newemail@email.com')
+        expect(@subject2).to_not be_valid
+      end
+
+      it 'should invalidate same emails regardless of case' do
+        @subject = User.create( name: 'Fred', password: '12345', password_confirmation: '12345', email: 'newemail@email.com')
+        @subject2 = User.create( name: 'Terry', password: '67890', password_confirmation: '67890', email: 'NEWEMAIL@email.com')
+        expect(@subject2).to_not be_valid
+      end
 
     end
 

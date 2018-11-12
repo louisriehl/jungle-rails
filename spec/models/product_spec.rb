@@ -10,7 +10,7 @@ RSpec.describe Product, type: :model do
                                 )
   }
 
-  describe 'Validations' do
+  context 'Validations' do
 
     it 'should be valid with valid attributes' do
       expect(subject).to be_valid

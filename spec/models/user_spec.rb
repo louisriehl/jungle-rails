@@ -23,8 +23,8 @@ RSpec.describe User, type: :model do
     context 'Passwords' do
 
       it 'should be valid when password and password_confirmation match' do
-        subject.password = '12345'
-        subject.password_confirmation = '12345'
+        subject.password = '123456'
+        subject.password_confirmation = '123456'
         expect(subject).to be_valid
       end
 
@@ -39,9 +39,21 @@ RSpec.describe User, type: :model do
       end
 
       it 'should be invalid when password and password_confirmation do not match' do
-        subject.password = '12345'
-        subject.password_confirmation = '56789'
+        subject.password = '123456'
+        subject.password_confirmation = '567890'
         expect(subject).to_not be_valid
+      end
+
+      it 'should be invalid if password is shorter than 5 characters' do
+        subject.password = '123'
+        subject.password_confirmation = '123'
+        expect(subject).to_not be_valid
+      end
+
+      it 'should be valid if the password is 5 characters' do
+        subject.password = '12345'
+        subject.password_confirmation = '12345'
+        expect(subject).to be_valid
       end
 
     end

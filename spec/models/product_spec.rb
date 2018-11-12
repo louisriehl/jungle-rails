@@ -21,9 +21,9 @@ RSpec.describe Product, type: :model do
       expect(subject).to_not be_valid
     end
 
+    # Due to monetize, price is converted to price_cents
     it 'should be invalid without a price' do
       subject.price_cents = nil
-      subject.price = nil
       expect(subject).to_not be_valid
     end
 

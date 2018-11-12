@@ -83,6 +83,25 @@ RSpec.describe User, type: :model do
 
   describe 'authenticate_with_credentials' do
 
+    it 'should return a user if email and password are valid' do
+      @subject = User.create( name: 'Fred', password: '12345', password_confirmation: '12345', email: 'newemail@email.com')
+      expect(@subject.authenticate_with_credentials('newemail@email.com', '12345')).to be_a User
+    end
+
+    it 'should return a user if email has trailing or leading spaces' do
+      @subject = User.create( name: 'Fred', password: '12345', password_confirmation: '12345', email: 'newemail@email.com')
+      expect(@subject.authenticate_with_credentials('   newemail@email.com   ', '67890')).to be_a User
+    end
+
+    it 'should return nil if email is invalid' do
+      @subject = User.create( name: 'Fred', password: '12345', password_confirmation: '12345', email: 'newemail@email.com')
+      expect(@subject.authenticate_with_credentials('neweremail@email.com', '12345')).to be_nil
+    end
+
+    it 'should return nil if password is invalid' do
+      @subject = User.create( name: 'Fred', password: '12345', password_confirmation: '12345', email: 'newemail@email.com')
+      expect(@subject.authenticate_with_credentials('newemail@email.com', '67890')).to be_nil
+    end
   end
 
 end

@@ -20,7 +20,8 @@ RSpec.feature "Visitor adds product to cart from home page", type: :feature, js:
 
   end
 
-  scenario "They see all products" do
+
+  scenario "They can add an item to their cart" do
     # ACT
     visit root_path
 
@@ -28,7 +29,7 @@ RSpec.feature "Visitor adds product to cart from home page", type: :feature, js:
 
     # DEBUG / VERIFY
     save_screenshot
-    expect(page).to have_content 'My Cart (0)'
+    expect(page).to have_content 'My Cart (1)'
   end
 
 end

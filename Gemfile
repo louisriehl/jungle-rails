@@ -43,6 +43,10 @@ group :development, :test do
   # Test models with rspec
   gem 'rspec-rails', '~> 3.5'
 
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'quiet_assets'

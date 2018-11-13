@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   before_save :downcase_email
 
-  def authenticate_with_credentials(email, password)
+  def self.authenticate_with_credentials(email, password)
     @email = trim_spaces(email)
     @user = User.find_by_email(@email.downcase)
 
@@ -23,11 +23,11 @@ class User < ActiveRecord::Base
   end
 
   private
-    def trim_spaces(string)
+    def self.trim_spaces(string)
       string.tr(' ', '')
     end
 
-    def downcase_email
+    def self.downcase_email
       self.email.downcase!
     end
 

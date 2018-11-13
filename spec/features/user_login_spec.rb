@@ -19,6 +19,9 @@ RSpec.feature "User can login from login page", type: :feature, js: true do
     # ACT
     visit "/login"
 
+    fill_in 'email', with: @user.email
+    fill_in 'password', with: @user.password
+
     # DEBUG
     save_screenshot
 

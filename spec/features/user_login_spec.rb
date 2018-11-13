@@ -21,9 +21,13 @@ RSpec.feature "User can login from login page", type: :feature, js: true do
 
     fill_in 'email', with: @user.email
     fill_in 'password', with: @user.password
+    click_on 'Submit'
 
     # DEBUG
     save_screenshot
+
+    # VALIDATIONS
+    expect(page).to have_content 'Logout'
 
   end
 
